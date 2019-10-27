@@ -1,0 +1,46 @@
+{
+    "name": "designbycode/laravel-helpers",
+    "description": "Simple laravel helper utilities",
+    "keywords": ["laravel-helper", "menu active", "active class", "body class", "set classes"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Claude Myburgh",
+            "email": "claude@deisgnbycode.co.za"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "DesignByCode\\Helpers\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "DesignByCode\\Helpers\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "branch-alias": {
+        },
+        "laravel": {
+            "providers": [
+                "DesignByCode\\Helpers\\Providers\\HelpersServiceProvider"
+            ],
+            "aliases": {
+                "Set": "DesignByCode\\Helpers\\Facades\\Set"
+            }
+        }
+    },
+    "require": {
+        "php": ">=7.2",
+        "illuminate/support": "^6.3"
+    }
+}
