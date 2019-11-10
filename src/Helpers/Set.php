@@ -1,26 +1,18 @@
 <?php
-
-
 namespace DesignByCode\Helpers;
-
 use Illuminate\Support\Arr;
-
-
 class Set
 {
-
     /**
      * @param $path
      * @param string $active
      * @return mixed
      */
-
     public function isActive($path, $active = null)
     {
         if ($active === null) {
             $active = $this->checkConfig();
         }
-
         return $this->returnIf($this->onPage($path), $active);
     }
 
@@ -65,36 +57,31 @@ class Set
         }
     }
 
-
+    /**
+     * @param array $class
+     * @param array $exclude
+     * @return string
+     */
     public function bodyClass(array $class = [], array $exclude = [])
     {
         $body = config('helpers.body.default');
-
         $prefix = config('helpers.body.prefix');
-
         $classes = array_merge([$body], $class);
         if ($this->getRouteName() === null && $this->onPage('/')) {
-
             if( $prefix === true) {
                 $classes[] = $body . "-frontpage";
             }
-
             $classes[] = "frontpage";
         }else {
-
             if( $prefix === true) {
                 $classes[] = $body . "-" . $this->getRouteName();
             }
-
             $classes[] = $this->getRouteName();
         }
         if ($this->configExists()) {
-
             $excludeFiles = array_merge($exclude, config('helpers.body.exclude'));
-
             $classes = array_unique(array_diff($classes, $excludeFiles));
         }
-
         $classSet = implode(' ', $classes);
 
         return $classSet;
@@ -105,8 +92,6 @@ class Set
      */
     private function getRouteName()
     {
-        return request()->route()->getName();
+        return str_replace('.','-', request()->route()->getName());
     }
-
-
 }
