@@ -7,8 +7,6 @@ use Illuminate\Support\ServiceProvider;
 
 class HelpersServiceProvider extends ServiceProvider
 {
-
-
     /**
      * Register services.
      *
@@ -16,9 +14,7 @@ class HelpersServiceProvider extends ServiceProvider
      */
     public function register()
     {
-
        $this->app->alias(Set::class,'set');
-
     }
 
     /**
@@ -33,6 +29,9 @@ class HelpersServiceProvider extends ServiceProvider
         ], 'helpers');
     }
 
+    /**
+     * @return array
+     */
     public function provides()
     {
         return ['set'];

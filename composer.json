@@ -29,6 +29,7 @@
     "prefer-stable": true,
     "extra": {
         "branch-alias": {
+            "dev-master": "2.x-dev"
         },
         "laravel": {
             "providers": [
@@ -40,7 +41,7 @@
         }
     },
     "require": {
-        "php": "^7.2",
-        "illuminate/support": "~5.8|^6.0"
+        "php": "^7.2.5",
+        "illuminate/support": "^7.0"
     }
 }
