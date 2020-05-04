@@ -1,5 +1,5 @@
 <?php
-namespace DesignByCode\Helpers;
+namespace DesignByCode\LaravelHelpers\Helpers;
 use Illuminate\Support\Arr;
 class Set
 {

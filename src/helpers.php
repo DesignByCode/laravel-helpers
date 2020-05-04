@@ -1,6 +1,6 @@
 <?php
 
-use DesignByCode\Helpers\Facades\Set;
+use DesignByCode\LaravelHelpers\Facades\Set;
 
 if (!function_exists('set_active')) {
 
@@ -10,7 +10,6 @@ if (!function_exists('set_active')) {
         }
         return Set::isActive($root, $class);
     }
-
 }
 
 

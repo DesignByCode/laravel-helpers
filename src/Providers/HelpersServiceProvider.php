@@ -1,8 +1,9 @@
 <?php
 
-namespace DesignByCode\Helpers\Providers;
+namespace DesignByCode\LaravelHelpers\Providers;
 
-use DesignByCode\Helpers\Set;
+
+use DesignByCode\LaravelHelpers\Helpers\Set;
 use Illuminate\Support\ServiceProvider;
 
 class HelpersServiceProvider extends ServiceProvider
@@ -16,9 +17,7 @@ class HelpersServiceProvider extends ServiceProvider
      */
     public function register()
     {
-
        $this->app->alias(Set::class,'set');
-
     }
 
     /**
